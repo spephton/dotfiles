@@ -40,3 +40,5 @@ end)
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/jacob/packer.lua<CR>")
+
+vim.keymap.set("n", "<leader>mk", "<cmd>make!<CR>")
