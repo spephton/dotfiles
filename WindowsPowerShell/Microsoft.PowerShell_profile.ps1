@@ -10,4 +10,12 @@ Set-Alias -Name gcn -Value gitcomn
 Function gitpush { git push }
 Set-Alias -Name gip -Value gitpush
 
-Remove-Item alias:curl # use system32 curl instead of Invoke-WebRequest
+if ($PSVersionTable.PSVersion.Major -lt 6)
+{
+	Remove-Item Alias:curl
+}
+
+Function psudo {
+	Start-Process PowerShell -Verb RunAs
+}
+Set-Alias -name sudo -Value psudo
