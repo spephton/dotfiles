@@ -19,3 +19,8 @@ Function psudo {
 	Start-Process PowerShell -Verb RunAs
 }
 Set-Alias -name sudo -Value psudo
+
+Function myTail {
+	Get-Content $args -Wait -Tail 30
+}
+Set-Alias -Name tail -Value myTail
